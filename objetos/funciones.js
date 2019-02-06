@@ -46,5 +46,23 @@ function imprimirNombreYedad(persona){
 	console.log(`Hola me llamo ${nombre} y tengo ${edad} años`)
 }
 
+function cumpleanos(persona){
+	return {
+		...persona,
+		edad : persona.edad + 1
+	}
+}
+
+
 imprimirNombreYedad(ivan)
+cumpleanos(ivan)
+
+
+
+
+
+
+
+
+
 //imprimirNombreMayusculas(ivan)
