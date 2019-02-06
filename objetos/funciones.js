@@ -32,9 +32,19 @@ function imprimirNombreMayusculas(persona){
 /*
 
 function imprimirNombreMayusculas( {nombre} ){
-	
+
 	console.log(nombre.toUpperCase())
 }
 */
 
-imprimirNombreMayusculas(ivan)
+
+//Desestructurar objetos
+
+function imprimirNombreYedad(persona){
+	var { nombre } = persona
+	var { edad } = persona
+	console.log(`Hola me llamo ${nombre} y tengo ${edad} años`)
+}
+
+imprimirNombreYedad(ivan)
+//imprimirNombreMayusculas(ivan)
