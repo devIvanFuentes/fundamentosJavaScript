@@ -47,9 +47,39 @@ console.log(personasAlta)
 
 
 //PERSONAS BAJAS
-
-const esBaja = persona => persona.altura < 1.8
+const estaturaMinima = 1.8
+const esBaja = persona => persona.altura < estaturaMinima
 
 var pesronasBajas = personas.filter(esBaja)
 
 console.log(pesronasBajas) 
+
+
+
+// CAMBIAR DE DE MTS A CM
+
+const pasarAlturaAcms = persona =>({    
+    ...persona,
+    altura: persona.altura * 100  
+})
+
+ /*
+
+
+const pasarAlturaAcms = persona =>{
+    
+    return {
+        ...persona,
+        altura: persona.altura * 100
+    }  
+}
+
+*/
+
+var personasCms = personas.map(pasarAlturaAcms)
+
+console.log(personasCms)
+
+
+
+
