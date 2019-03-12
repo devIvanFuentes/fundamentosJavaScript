@@ -1,37 +1,43 @@
 var sacha = {
     nombre: 'Sacha',
     apellido: 'Lifszyc',
-    altura: 1.72
+    altura: 1.72,
+    cantidadDeLibros: 30
 }
 
 var alan = {
     nombre: 'Alan',
     apellido: 'Perez',
-    altura: 1.86
+    altura: 1.86,
+    cantidadDeLibros:33
 }
 
 var martin = {
     nombre: 'Martin',
     apellido: 'Gomez',
-    altura: 1.85
+    altura: 1.85,
+    cantidadDeLibros: 45
 }
 
 var dario = {
     nombre: 'Dario',
     apellido: 'Juarez',
-    altura: 1.71
+    altura: 1.71,
+    cantidadDeLibros: 32
 }
 
 var vicky = {
     nombre: 'Vicky',
     apellido: 'Zapata',
-    altura: 1.56
+    altura: 1.56,
+    cantidadDeLibros:98
 }
 
 var paula = {
     nombre: 'Paula',
     apellido: 'Barros',
-    altura: 1.76
+    altura: 1.76,
+    cantidadDeLibros: 423
 }
 
 
@@ -81,5 +87,12 @@ var personasCms = personas.map(pasarAlturaAcms)
 console.log(personasCms)
 
 
+// REDUCE
+
+const reducer = (acum, { cantidadDeLibros }) => acum + cantidadDeLibros
+
+var totalDeLibros = personas.reduce(reducer, 0)
+
+console.log(`El Total de libros es: ${totalDeLibros}`)
 
 
