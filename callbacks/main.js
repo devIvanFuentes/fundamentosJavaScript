@@ -8,46 +8,37 @@ const onPeopleResponse =  function(persona){
 	console.log(`Hola, yo soy ${persona.name}`)
 }
 
-function obtenerPersonaje(id,callback){
-	console.log(id)
-	const url = `${API_URL}${PEOPLE_URL.replace(':id',id)}`
-	
+function obtenerPersonaje(id){
+
+	return new Promise((resolve,reject)=>{
+		const url = `${API_URL}${PEOPLE_URL.replace(':id',id)}`
 		$
-			.get(url, opts,callback)
-			.fail(() => {
-				console.log(`Sucedio un error. No se pudo obtener el personaje ${id}`)
+			.get(url, opts,function(data){
+				resolve(data)
+			})
+			.fail(()=>reject(id))
 		})
 
-
-
 }
+
+function onError(id){
+	console.log(`Sucedio un error al conseguir el personaje ${id}`)
+}
+
+obtenerPersonaje(1)
+	.then(function(personaje){
+		console.log(`El personaje 1 es ${personaje.name}`)
+	})
+	.catch(onError)
+
+
+
+
 
 obtenerPersonaje(1, function(personaje){
 	console.log(`Hola, yo soy ${personaje.name}`)
 
-	obtenerPersonaje(2, function(personaje){
-		console.log(`Hola, yo soy ${personaje.name}`)
-
-		obtenerPersonaje(3,function(personaje){
-			console.log(`Hola, yo soy ${personaje.name}`)
-
-			obtenerPersonaje(4,function(personaje){
-				console.log(`Hola, yo soy ${personaje.name}`)
-
-				obtenerPersonaje(5,function(personaje){
-					console.log(`Hola, yo soy ${personaje.name}`)
-
-					obtenerPersonaje(6,function(personaje){
-						console.log(`Hola, yo soy ${personaje.name}`)
-
-						obtenerPersonaje(7, function (personaje){
-							console.log(`Hola, yo soy ${personaje.name}`)
-						})
-					})
-				})
-			})
-		})
-	})
+	
 })
 
 
