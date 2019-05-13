@@ -12,6 +12,7 @@ Persona.prototype.saludar = function(){
 }
 
 Persona.prototype.soyAlto= function(){
+	
 	if (this.altura >= alturaMaxima){
 		console.log('Soy Alto')
 	}else{
